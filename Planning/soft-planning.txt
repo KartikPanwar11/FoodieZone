@@ -13,6 +13,10 @@
     search 
     restaurant containers w
     restaurants cards
+        img
+        rating
+        cuisine
+        price for 2
 
 
 3. footer
