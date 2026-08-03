@@ -1,0 +1,32 @@
+//what components will my ap have
+1. header
+2. body
+3. footer
+
+1.header
+    logo
+    
+    offer
+    cart
+
+2. body
+    search 
+    restaurant containers w
+    restaurants cards
+
+
+3. footer
+    about us
+    career
+    blogs
+
+    contact
+    partner with us
+    ride with us
+
+    t&c
+    privacy policy 
+    refund policy
+
+
+
