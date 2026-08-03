@@ -1,5 +1,7 @@
 # FoodieZone
 
+## Live link --> https://foodiezone02.vercel.app/
+
 A modern, responsive food delivery web application interface built from scratch to showcase React fundamentals, component-driven architecture, and modern CSS layouts. 
 
 ## Overview
