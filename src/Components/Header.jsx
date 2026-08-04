@@ -1,8 +1,10 @@
+import { LOGO_URL } from "../utils/constants";
+
 const Header = ()=>{
     return(
         <nav className="nav">
             <div className="logo">
-                <a href="/"><img src="https://res.cloudinary.com/de8ejendd/image/upload/v1785741262/gemini-svg_3_vqzehx.svg" alt="FoodieZone Logo" /> </a>
+                <a href="/"><img src={LOGO_URL} alt="FoodieZone Logo" /> </a>
             </div>
             <div className="nav-items">
                 <ul>
