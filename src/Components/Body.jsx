@@ -1,11 +1,15 @@
 import Card from "./Card";
 import restaurantList from "../Data/res-list";
+import {useState} from "react";
 
 const Body = ()=>{
-
+    
+    const [listOfRestaurants, setListOfRestaurants] = useState(restaurantList); 
+    
     let sortByRating = () => {
-        const filteredRestaurants = restaurantList.filter((res) => res.starRating >= 4.5);
-        console.log(filteredRestaurants);
+        const sortedList = restaurantList.filter((res) => res.starRating >= 4.5);
+        setListOfRestaurants(sortedList);
+        console.log(sortedList);
     }
 
 
@@ -22,7 +26,7 @@ const Body = ()=>{
                 </div>
             </div>
             <div className="res-card">
-                {restaurantList.map((restaurant) => (
+                {listOfRestaurants.map((restaurant) => (
                     <Card key={restaurant.id} resData={restaurant} />
                 ))}
             </div>
