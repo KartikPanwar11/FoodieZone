@@ -22,6 +22,9 @@ FoodieZone is a front-end React application that displays a curated list of loca
 * **Styling:** Custom CSS3 (Flexbox, standard styling)
 * **Icons/Assets:** Custom SVG graphics and optimized web images
 
+<img width="2940" height="1674" alt="image" src="https://github.com/user-attachments/assets/83baaeca-85f7-4e95-8aa1-cb07cb86ca0b" />
+
+
 ## Project Structure
 
 ```text
