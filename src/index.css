@@ -49,17 +49,27 @@ body{
 .search{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
     padding: 20px;
     margin: 20px 0;
     gap: 10px;
 }
 
 .search > input {
-    width: 400px;
+    flex: 0 0 320px;
+    max-width: 420px;
+    width: 320px;
     padding: 10px 15px;
     border: 1px solid #CBD5E0;
     border-radius: 8px;
     font-size: 1rem;
+}
+
+.search-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .search > input:focus {
@@ -68,7 +78,7 @@ body{
     box-shadow: 0 0 0 2px rgba(255, 87, 34, 0.2);
 }
 
-.search > button {
+.search-actions > button {
     padding: 10px 20px;
     background-color: #FF5722;
     color: white;
@@ -78,10 +88,22 @@ body{
     font-size: 1rem;
     font-weight: 500;
     transition: background-color 0.2s ease-in-out;
+    min-width: 96px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.search > button:hover {
+.search-actions > button:hover {
     background-color: #E64A19;
+}
+
+.sort-btn {
+    background-color: #2D3748 !important;
+}
+
+.sort-btn:hover {
+    background-color: #1A202C !important;
 }
 
 .res-card{
