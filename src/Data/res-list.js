@@ -1,84 +1,92 @@
 const restaurantList = [
   {
-    id: 1,
-    name: "The Grand Paratha House",
-    cuisines: ["North Indian", "Punjabi", "Thalis"],
-    starRating: 4.5,
-    timeToArrive: "30-40 mins",
-    image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Indian food
+    id: "590454",
+    name: "Free India Restaurant",
+    cuisines: "Chinese, Biryani, Snacks",
+    cloudinaryImageId: "pufxybu8v7buunia3qky",
+    deliveryTime: 22,
+    avgRating: 4
   },
   {
-    id: 2,
-    name: "Dragon Wok & Noodles",
-    cuisines: ["Indo-Chinese", "Asian", "Beverages"],
-    starRating: 4.2,
-    timeToArrive: "25-35 mins",
-    image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Noodles
+    id: "683064",
+    name: "Pizza Hut",
+    cuisines: "Pizzas",
+    cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2026/6/15/126b24fa-0184-49c6-bf2e-61ba7f227760_683064.JPG",
+    deliveryTime: 25,
+    avgRating: 4.1
   },
   {
-    id: 3,
-    name: "Crispy Bite Burgers",
-    cuisines: ["Fast Food", "American", "Snacks"],
-    starRating: 4.0,
-    timeToArrive: "15-25 mins",
-    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Burger
+    id: "305823",
+    name: "Barbeque Nation",
+    cuisines: "North Indian, Barbecue, Kebabs, Biryani, Street Food, Snacks",
+    cloudinaryImageId: "ol8o7lyiqp6aybzgkqot",
+    deliveryTime: 51,
+    avgRating: 4.1
   },
   {
-    id: 4,
-    name: "Woodfire Pizza Co.",
-    cuisines: ["Pizzas", "Italian", "Desserts"],
-    starRating: 4.7,
-    timeToArrive: "40-45 mins",
-    image: "https://www.tasteofhome.com/wp-content/uploads/2018/01/Homemade-Pizza_EXPS_FT23_376_EC_120123_3.jpg" // Pizza
+    id: "28408",
+    name: "Chinese Wok",
+    cuisines: "Chinese, Asian, Tibetan, Desserts",
+    cloudinaryImageId: "e0839ff574213e6f35b3899ebf1fc597",
+    deliveryTime: 24,
+    avgRating: 4
   },
   {
-    id: 5,
-    name: "Fresh Deli Subs",
-    cuisines: ["Healthy Food", "Sandwiches", "Wraps"],
-    starRating: 4.3,
-    timeToArrive: "20-30 mins",
-    image: "https://images.unsplash.com/photo-1619881589316-56c7f9e6b587?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Sandwich
+    id: "1404962",
+    name: "ITC Aashirvaad Soul Creations",
+    cuisines: "Indian, pure veg, Healthy Food, Home Food, South Indian, North Indian, Sweets",
+    cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2026/8/3/4d9b7de9-87ee-4dc4-9a69-590afb7e8197_1404962.JPG",
+    deliveryTime: 36,
+    avgRating: 4.4
   },
   {
-    id: 6,
-    name: "Royal Malai Chaap",
-    cuisines: ["North Indian", "Street Food", "Snacks"],
-    starRating: 4.6,
-    timeToArrive: "35-45 mins",
-    image: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Indian curries/chaap
+    id: "1402864",
+    name: "The Rameshwaram Cafe",
+    cuisines: "South Indian",
+    cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2026/7/8/ad93ec0f-720c-470f-a00b-b4442f403d72_1402864.jpg",
+    deliveryTime: 36,
+    avgRating: 4.6
   },
   {
-    id: 7,
-    name: "The Grand Paratha House",
-    cuisines: ["North Indian", "Punjabi", "Thalis"],
-    starRating: 4.5,
-    timeToArrive: "30-40 mins",
-    image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Indian food
+    id: "23671",
+    name: "McDonald's",
+    cuisines: "Burgers, Beverages, Cafe, Desserts",
+    cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2026/6/18/02544c38-5b4e-417b-b9cb-b689d2a5a2d2_23671.JPG",
+    deliveryTime: 16,
+    avgRating: 4.3
   },
   {
-    id: 8,
-    name: "Dragon Wok & Noodles",
-    cuisines: ["Indo-Chinese", "Asian", "Beverages"],
-    starRating: 4.2,
-    timeToArrive: "25-35 mins",
-    image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Noodles
+    id: "645478",
+    name: "Subway",
+    cuisines: "sandwich, Salads, wrap, Healthy Food",
+    cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2025/6/12/e4012b48-8006-4dc7-bfaa-e1ed13fdfa29_645478.jpg",
+    deliveryTime: 17,
+    avgRating: 4.2
+  },
+   {
+    id: "590457",
+    name: "New China Restaurant",
+    cuisines: "Chinese, Biryani, Snacks",
+    cloudinaryImageId: "pufxybu8v7buunia3qky",
+    deliveryTime: 22,
+    avgRating: 4
   },
   {
-    id: 9,
-    name: "Crispy Bite Burgers",
-    cuisines: ["Fast Food", "American", "Snacks"],
-    starRating: 4.0,
-    timeToArrive: "15-25 mins",
-    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Burger
+    id: "683065",
+    name: "Domino's Pizza",
+    cuisines: "Pizzas",
+    cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2026/6/15/126b24fa-0184-49c6-bf2e-61ba7f227760_683064.JPG",
+    deliveryTime: 25,
+    avgRating: 4.1
   },
-  {
-    id: 10,
-    name: "Woodfire Pizza Co.",
-    cuisines: ["Pizzas", "Italian", "Desserts"],
-    starRating: 4.7,
-    timeToArrive: "40-45 mins",
-    image: "https://www.tasteofhome.com/wp-content/uploads/2018/01/Homemade-Pizza_EXPS_FT23_376_EC_120123_3.jpg" // Pizza
-  }
+  // {
+  //   id: "305822",
+  //   name: "Barbeque World",
+  //   cuisines: "North Indian, Barbecue, Kebabs, Biryani, Street Food, Snacks",
+  //   cloudinaryImageId: "ol8o7lyiqp6aybzgkqot",
+  //   deliveryTime: 51,
+  //   avgRating: 4.1
+  // },
 ];
 
 export default restaurantList;

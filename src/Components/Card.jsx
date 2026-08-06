@@ -1,19 +1,19 @@
-import restaurantList from "../Data/res-list";
+import { CDN_URL } from "../utils/constants";
 
-
-const Card = (props)=>{
+const Card = (props) => {
     const { resData } = props;
-    const { name, cuisines, starRating, timeToArrive, image } = resData;
+    const { name, cuisines, cloudinaryImageId, deliveryTime, avgRating } = resData;
+
     return(
         <div className="card">
             <img 
             className="res-img"
-            src={image} 
+            src={CDN_URL + cloudinaryImageId} 
             alt={name} />
             <h3>{name}</h3>
-            <p>{cuisines.join(", ")}</p>
-            <h5>{starRating} stars</h5>
-            <h5>{timeToArrive}</h5>
+            <p>{Array.isArray(cuisines) ? cuisines.join(", ") : cuisines}</p>
+            <h5>{avgRating} stars</h5>
+            <h5>{deliveryTime} mins</h5>
         </div>
     )
 }
