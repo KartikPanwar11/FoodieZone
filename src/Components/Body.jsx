@@ -40,12 +40,12 @@ const Body = () => {
     };
 
     //conditional rendering
-    if (isLoading) {
-        return <Shimmer />;
-    }
+    // if (isLoading) {
+    //     return <Shimmer />;
+    // }
 
 
-    return (
+    return listOfRestaurants.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="search">
                 <input placeholder="Search For Restaurants"></input>

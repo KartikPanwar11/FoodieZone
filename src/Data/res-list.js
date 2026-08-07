@@ -79,14 +79,7 @@ const restaurantList = [
     deliveryTime: 25,
     avgRating: 4.1
   },
-  // {
-  //   id: "305822",
-  //   name: "Barbeque World",
-  //   cuisines: "North Indian, Barbecue, Kebabs, Biryani, Street Food, Snacks",
-  //   cloudinaryImageId: "ol8o7lyiqp6aybzgkqot",
-  //   deliveryTime: 51,
-  //   avgRating: 4.1
-  // },
+
 ];
 
 export default restaurantList;
