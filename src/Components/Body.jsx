@@ -2,31 +2,48 @@ import Card from "./Card";
 import restaurantList from "../Data/res-list";
 import { mapRestaurantData } from "../utils/helper";
 import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
-    const [listOfRestaurants, setListOfRestaurants] = useState(restaurantList);
+    const [listOfRestaurants, setListOfRestaurants] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         fetchData();
     }, []);
 
     const fetchData = async () => {
-        const data = await fetch(
-            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.9690247&lng=72.8205292&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-        );
-        const json = await data.json();
-        const restaurants =
-            json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-            
-        if (restaurants) {
-            setListOfRestaurants(mapRestaurantData(restaurants));
+        try {
+            const data = await fetch(
+                "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.9690247&lng=72.8205292&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+            );
+            const json = await data.json();
+            const restaurants =
+                json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+            if (restaurants) {
+                setListOfRestaurants(mapRestaurantData(restaurants));
+            } else {
+                setListOfRestaurants(restaurantList);
+            }
+        } catch (error) {
+            setListOfRestaurants(restaurantList);
+        } finally {
+            setIsLoading(false);
         }
     };
 
+    //optional chaining 
     const sortByRating = () => {
         const sortedList = listOfRestaurants.filter((res) => res.avgRating >= 4.2);
         setListOfRestaurants(sortedList);
     };
+
+    //conditional rendering
+    if (isLoading) {
+        return <Shimmer />;
+    }
+
 
     return (
         <div className="body">

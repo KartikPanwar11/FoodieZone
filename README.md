@@ -8,7 +8,7 @@ A modern, responsive food delivery web application interface built from scratch 
 
 FoodieZone is a front-end React application that displays a list of local restaurants. The primary goal of this project was to build a clean, scalable UI without relying on heavy external UI libraries. It relies entirely on custom, modern CSS, standard React features, and live API integration to fetch real-world data.
 
-## 📈 Development Journey / Changelog
+## Development Journey / Changelog
 
 * **Phase 1 (The Foundation):** Built the core UI using standard React components and props, initially populated with static, hardcoded JSON data to establish the layout.
 * **Phase 2 (State Management):** Introduced the `useState` hook to add interactivity, creating a feature that allows users to filter and view only the top-rated restaurants dynamically.
