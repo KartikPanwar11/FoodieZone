@@ -7,6 +7,7 @@ import Shimmer from "./Shimmer";
 const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    let [searchText, setSearchText] = useState("");
 
     useEffect(() => {
         fetchData();
@@ -17,6 +18,7 @@ const Body = () => {
             const data = await fetch(
                 "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.9690247&lng=72.8205292&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
             );
+
             const json = await data.json();
             const restaurants =
                 json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
@@ -33,24 +35,33 @@ const Body = () => {
         }
     };
 
-    //optional chaining 
     const sortByRating = () => {
         const sortedList = listOfRestaurants.filter((res) => res.avgRating >= 4.2);
         setListOfRestaurants(sortedList);
     };
 
-    //conditional rendering
-    // if (isLoading) {
-    //     return <Shimmer />;
-    // }
-
 
     return listOfRestaurants.length === 0 ? <Shimmer /> : (
         <div className="body">
             <div className="search">
-                <input placeholder="Search For Restaurants"></input>
+
+                <input placeholder="Search For Restaurants" value={searchText} 
+                onChange={(e)=>{setSearchText(e.target.value)}}></input>
+                
                 <div className="search-actions">
-                    <button type="button">Search</button>
+{/* Search button  */}
+                    <button type="button"
+                    onClick={()=>{
+                      const filteredRes = listOfRestaurants.filter((res)=>{
+                            res.name.includes(searchText);
+                        });
+                        setListOfRestaurants(filteredRes);
+
+
+                    }}>
+                    Search
+                    </button>
+{/* Sort button */}
                     <button type="button" 
                     className="sort-btn" 
                     onClick={sortByRating}
