@@ -3,9 +3,7 @@ import { useState } from "react";
 
 const Header = ()=>{
 
-    let btnName = "Login";
     const [isLoggedIn, setIsLoggedIn] = useState("Login");
-
 
 
     return(

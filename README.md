@@ -12,7 +12,7 @@ FoodieZone is a front-end React application that displays a list of local restau
 
 * **Phase 1 (The Foundation):** Built the core UI using standard React components and props, initially populated with static, hardcoded JSON data to establish the layout.
 * **Phase 2 (State Management):** Introduced the `useState` hook to add interactivity, creating a feature that allows users to filter and view only the top-rated restaurants dynamically.
-* **Phase 3 (Live API Integration):** Upgraded the app from static data to real-world data by implementing the `useEffect` hook to fetch and render live restaurant data directly from the Swiggy API.
+* **Phase 3 (Live API Integration):** Upgraded the app from static data to real-world data by implementing the `useEffect` hook to fetch and render live restaurant data directly from the Swiggy API. Also added shimmer effect for initial loading.
 
 ## Key Features
 
