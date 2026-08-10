@@ -63,22 +63,22 @@ const restaurantList = [
     deliveryTime: 17,
     avgRating: 4.2
   },
-   {
-    id: "590457",
-    name: "New China Restaurant",
-    cuisines: "Chinese, Biryani, Snacks",
-    cloudinaryImageId: "pufxybu8v7buunia3qky",
-    deliveryTime: 22,
-    avgRating: 4
-  },
-  {
-    id: "683065",
-    name: "Domino's Pizza",
-    cuisines: "Pizzas",
-    cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2026/6/15/126b24fa-0184-49c6-bf2e-61ba7f227760_683064.JPG",
-    deliveryTime: 25,
-    avgRating: 4.1
-  },
+ //  {
+  //   id: "590457",
+  //   name: "New China Restaurant",
+  //   cuisines: "Chinese, Biryani, Snacks",
+  //   cloudinaryImageId: "pufxybu8v7buunia3qky",
+  //   deliveryTime: 22,
+  //   avgRating: 4
+  // },
+  // {
+  //   id: "683065",
+  //   name: "Domino's Pizza",
+  //   cuisines: "Pizzas",
+  //   cloudinaryImageId: "RX_THUMBNAIL/IMAGES/VENDOR/2026/6/15/126b24fa-0184-49c6-bf2e-61ba7f227760_683064.JPG",
+  //   deliveryTime: 25,
+  //   avgRating: 4.1
+  // },
 
 ];
 
