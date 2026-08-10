@@ -6,6 +6,7 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
+    const [allRestaurants, setAllRestaurants] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     let [searchText, setSearchText] = useState("");
 
@@ -24,11 +25,15 @@ const Body = () => {
                 json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
             if (restaurants) {
-                setListOfRestaurants(mapRestaurantData(restaurants));
+                const mappedRestaurants = mapRestaurantData(restaurants);
+                setAllRestaurants(mappedRestaurants);
+                setListOfRestaurants(mappedRestaurants);
             } else {
+                setAllRestaurants(restaurantList);
                 setListOfRestaurants(restaurantList);
             }
         } catch (error) {
+            setAllRestaurants(restaurantList);
             setListOfRestaurants(restaurantList);
         } finally {
             setIsLoading(false);
@@ -36,7 +41,7 @@ const Body = () => {
     };
 
     const sortByRating = () => {
-        const sortedList = listOfRestaurants.filter((res) => res.avgRating >= 4.2);
+        const sortedList = allRestaurants.filter((res) => res.avgRating >= 4.2);
         setListOfRestaurants(sortedList);
     };
 
@@ -51,14 +56,14 @@ const Body = () => {
                 <div className="search-actions">
 {/* Search button  */}
                     <button type="button"
-                    onClick={()=>{
-                      const filteredRes = listOfRestaurants.filter((res)=>{
-                            res.name.includes(searchText);
-                        });
-                        setListOfRestaurants(filteredRes);
-
-
-                    }}>
+                    onClick={() => {
+                        const query = searchText.trim().toLowerCase();
+                        const filteredRes = query
+                            ? allRestaurants.filter((res) =>
+                                res?.name?.toLowerCase().includes(query)
+                            )
+                            : allRestaurants;
+                        setListOfRestaurants(filteredRes);}}>
                     Search
                     </button>
 {/* Sort button */}
