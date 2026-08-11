@@ -44,7 +44,7 @@ const Body = () => {
         const sortedList = allRestaurants.filter((res) => res.avgRating >= 4.2);
         setListOfRestaurants(sortedList);
     };
-
+    
 
     return listOfRestaurants.length === 0 ? <Shimmer /> : (
         <div className="body">
