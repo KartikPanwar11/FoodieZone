@@ -14,6 +14,7 @@ FoodieZone is a front-end React application that displays a list of local restau
 * **Phase 2 (State Management):** Introduced the `useState` hook to add interactivity, creating a feature that allows users to filter and view only the top-rated restaurants dynamically.
 * **Phase 3 (Live API Integration):** Upgraded the app from static data to real-world data by implementing the `useEffect` hook to fetch and render live restaurant data directly from the Swiggy API. Also added shimmer effect for initial loading.
 * **Phase 3.1 (Bugs Fix):** Added search box functionality by using `useState and filter` method to filter out search restaurants. Fixed unable to render the restaurant list from Swiggy API using the CORS Proxy.
+* **Phase 4 (Multi-Page Architecture):** Implemented client-side routing using `react-router-dom` to transition from a single view to a comprehensive multi-page application. Added dedicated, fully styled routes for the Home, About Us, Contact, and Offers pages, alongside a custom 404 Error catch-all route to improve user experience and navigation flow.
 
 ## Key Features
 

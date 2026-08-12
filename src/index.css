@@ -181,6 +181,256 @@ body{
     padding: 10px;
 }
 
+/* General Page Container */
+.page-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  min-height: 60vh;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #2D3748;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 32px;
+  color: #2D3748;
+  margin-bottom: 10px;
+}
+
+.page-subtitle {
+  text-align: center;
+  color: #718096;
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+/* --- About Page Styling --- */
+.about-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-header h1 {
+  font-size: 40px;
+  color: #FF5722;
+}
+
+.about-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.about-text h3 {
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #FF5722;
+}
+
+.about-text ul {
+  padding-left: 20px;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* --- Contact Page Styling --- */
+.contact-wrapper {
+  display: flex;
+  gap: 50px;
+  background: #FFFFFF;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-info h2 {
+  font-size: 32px;
+  color: #FF5722;
+  margin-bottom: 15px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.contact-form-container {
+  flex: 1;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #FF5722;
+}
+
+.submit-btn {
+  background-color: #FF5722;
+  color: #FFFFFF;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #E64A19;
+}
+
+/* --- Offers Page Styling --- */
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.offer-card {
+  background: #FFFFFF;
+  border: 2px dashed #FF5722;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+}
+
+.offer-card h3 {
+  color: #2D3748;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.offer-card p {
+  color: #718096;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.coupon-code {
+  background: #FFF3E0;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.coupon-code strong {
+  color: #FF5722;
+  font-size: 18px;
+}
+
+.copy-btn {
+  background: #2D3748;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.copy-btn:hover {
+  background: #1A202C;
+}
+
+/* --- Error 404 Page Styling --- */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 70vh;
+  padding: 20px;
+}
+
+.error-code {
+  font-size: 120px;
+  font-weight: 900;
+  color: #FF5722;
+  margin: 0;
+  line-height: 1;
+}
+
+.error-message {
+  font-size: 32px;
+  color: #2D3748;
+  margin: 20px 0;
+}
+
+.error-desc {
+  font-size: 18px;
+  color: #718096;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.home-btn {
+  background-color: #FF5722;
+  color: #FFFFFF;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #E64A19;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-content,
+  .contact-wrapper {
+    flex-direction: column;
+  }
+}
+
 .footer {
   background-color: #2D3748; 
   color: #FFFFFF;
