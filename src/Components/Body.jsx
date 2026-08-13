@@ -10,32 +10,56 @@ const Body = () => {
     const [isLoading, setIsLoading] = useState(true);
     let [searchText, setSearchText] = useState("");
 
-    const targetUrl = "https://swiggy.com/dapi/restaurants/list/v5?lat=18.9690247&lng=72.8205292&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-
     useEffect(() => {
         fetchData();
     }, []);
 
+    const SWIGGY_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.9690247&lng=72.8205292&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+    const CORS_PROXY = "https://corsproxy.io/?url=";
+
+    const parseSwiggyResponse = (json) => {
+        return json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+            || json?.data?.cards?.[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+            || json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+    };
+
     const fetchData = async () => {
         try {
-            const data = await fetch(`https://corsproxy.io/?url=${encodeURIComponent(targetUrl)}`);
+            let restaurants = null;
 
-            const json = await data.json();
-            const restaurants =
-                json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-
-            if (restaurants) {
-                const mappedRestaurants = mapRestaurantData(restaurants);
-                setAllRestaurants(mappedRestaurants);
-                setListOfRestaurants(mappedRestaurants);
-            } else {
-                setAllRestaurants(restaurantList);
-                setListOfRestaurants(restaurantList);
+            if (window.location.hostname !== "localhost") {
+                // Production (Vercel): use serverless API route — no CORS issues
+                const res = await fetch("/api/restaurants");
+                if (res.ok) {
+                    const json = await res.json();
+                    restaurants = parseSwiggyResponse(json);
+                }
             }
-        } catch (error) {
+
+            if (!restaurants) {
+                // Localhost dev: Parcel can't run serverless functions,
+                // so use a CORS proxy to reach Swiggy directly
+                const res = await fetch(CORS_PROXY + encodeURIComponent(SWIGGY_URL));
+                if (res.ok) {
+                    const json = await res.json();
+                    restaurants = parseSwiggyResponse(json);
+                }
+            }
+
+            if (restaurants && restaurants.length > 0) {
+                const mapped = mapRestaurantData(restaurants);
+                setAllRestaurants(mapped);
+                setListOfRestaurants(mapped);
+                setIsLoading(false);
+                return;
+            }
+
+            throw new Error("No restaurants found in response");
+        } catch (err) {
+            console.warn("Live fetch failed, using fallback data:", err.message);
+            // Last resort: static fallback data
             setAllRestaurants(restaurantList);
             setListOfRestaurants(restaurantList);
-        } finally {
             setIsLoading(false);
         }
     };
@@ -45,8 +69,10 @@ const Body = () => {
         setListOfRestaurants(sortedList);
     };
     
+    // Use isLoading state — not list length — to control Shimmer
+    if (isLoading) return <Shimmer />;
 
-    return listOfRestaurants.length === 0 ? <Shimmer /> : (
+    return (
         <div className="body">
             <div className="search">
 
