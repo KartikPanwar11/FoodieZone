@@ -1,6 +1,6 @@
 # FoodieZone
 
-## Live link --> <a href="https://foodiezone02.vercel.app"> FoodieZone <a/>
+## Live link --> <a href="https://foodiezone-zeta.vercel.app/"> FoodieZone <a/>
 
 A modern, responsive food delivery web application interface built from scratch to showcase React fundamentals, component-driven architecture, and modern CSS layouts. 
 
@@ -8,7 +8,7 @@ A modern, responsive food delivery web application interface built from scratch 
 
 FoodieZone is a front-end React application that displays a list of local restaurants. The primary goal of this project was to build a clean, scalable UI without relying on heavy external UI libraries. It relies entirely on custom, modern CSS, standard React features, and live API integration to fetch real-world data.
 
-## Development Journey / Changelog
+## Development Journey
 
 * **Phase 1 (The Foundation):** Built the core UI using standard React components and props, initially populated with static, hardcoded JSON data to establish the layout.
 * **Phase 2 (State Management):** Introduced the `useState` hook to add interactivity, creating a feature that allows users to filter and view only the top-rated restaurants dynamically.
@@ -27,13 +27,13 @@ FoodieZone is a front-end React application that displays a list of local restau
 ## Tech Stack
 
 * **Framework:** React.js
+* **Routing:** React Router DOM
+* **Data:** Swiggy Live API Integration
 * **Language:** JavaScript (ES6+)
 * **Styling:** Custom CSS3 (Flexbox, standard styling)
-* **Data:** Swiggy Live API Integration
 * **Icons/Assets:** Custom SVG graphics and optimized web images
 
-<img width="2940" height="1674" alt="image" src="https://github.com/user-attachments/assets/83baaeca-85f7-4e95-8aa1-cb07cb86ca0b" />
-
+<img width="1470" height="836" alt="Screenshot 2026-08-12 at 5 20 18 PM" src="https://github.com/user-attachments/assets/e5032791-eee0-4613-bdd2-28632f15ed97" />
 
 ## Project Structure
 
