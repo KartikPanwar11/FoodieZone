@@ -7,6 +7,7 @@ import Contact from "./Components/Contact";
 import Offers from "./Components/Offer";
 import Card from "./Components/Card";
 import Body from "./Components/Body";  
+import RestaurantMenu from "./Components/Res-menu";
 import Footer from "./Components/Footer";
 import ErrorPage from "./Components/Error";
 
@@ -41,7 +42,12 @@ const appRouter = createBrowserRouter([
         path:"/offers",
         element:<Offers/>
 
-    }],
+    },
+    {
+        path:"/restaurant/:resId",
+        element:<RestaurantMenu/>
+    },
+],
         errorElement: <ErrorPage/>
     },
 

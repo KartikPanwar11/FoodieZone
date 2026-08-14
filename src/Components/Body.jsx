@@ -4,6 +4,8 @@ import { mapRestaurantData } from "../utils/helper";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 
+
+
 const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
     const [allRestaurants, setAllRestaurants] = useState([]);
