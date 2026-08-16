@@ -3,6 +3,7 @@ import restaurantList from "../Data/res-list";
 import { mapRestaurantData } from "../utils/helper";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 
@@ -17,7 +18,7 @@ const Body = () => {
     }, []);
 
     const SWIGGY_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.9690247&lng=72.8205292&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-    const CORS_PROXY = "https://corsproxy.io/?url=";
+    const CORS_PROXY = "http://localhost:3001/?url=";
 
     const parseSwiggyResponse = (json) => {
         return json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -103,7 +104,9 @@ const Body = () => {
             </div>
             <div className="res-card">
                 {listOfRestaurants.map((res) => (
-                    <Card key={res.id} resData={res} />
+                    <Link key={res.id} to={"/restaurant/" + res.id} className="card-link">
+                        <Card resData={res} />
+                    </Link>
                 ))}
             </div>
         </div>

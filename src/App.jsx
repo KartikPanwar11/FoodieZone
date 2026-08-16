@@ -7,7 +7,7 @@ import Contact from "./Components/Contact";
 import Offers from "./Components/Offer";
 import Card from "./Components/Card";
 import Body from "./Components/Body";  
-import RestaurantMenu from "./Components/Res-menu";
+import RestaurantMenu from "./Components/RestaurantMenu";
 import Footer from "./Components/Footer";
 import ErrorPage from "./Components/Error";
 

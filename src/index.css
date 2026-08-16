@@ -145,6 +145,11 @@ body{
     margin: 0 auto;
 }
 
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
 .card{
     background-color: #FFFFFF;
     width: 100%;
@@ -516,4 +521,436 @@ body{
 @keyframes shimmer {
     0% { background-position: 200% 0; }
     100% { background-position: -200% 0; }
+}
+
+/* ======================================
+   Restaurant Menu Page
+   ====================================== */
+
+.menu-page {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+    min-height: 60vh;
+}
+
+/* --- Header --- */
+
+.menu-header {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 28px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid #E2E8F0;
+}
+
+.menu-header-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.menu-res-name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2D3748;
+    margin: 0 0 6px;
+    letter-spacing: -0.02em;
+}
+
+.menu-res-cuisines {
+    font-size: 0.95rem;
+    color: #718096;
+    margin: 0 0 2px;
+}
+
+.menu-res-area {
+    font-size: 0.85rem;
+    color: #A0AEC0;
+    margin: 0 0 16px;
+}
+
+.menu-res-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.menu-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #F7FAFC;
+    border: 1px solid #E2E8F0;
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2D3748;
+}
+
+.menu-badge-rating {
+    background-color: #F0FFF4;
+    border-color: #C6F6D5;
+    color: #276749;
+}
+
+.star-icon {
+    color: #38A169;
+    font-size: 0.9rem;
+}
+
+.star-icon.small {
+    font-size: 0.75rem;
+}
+
+.rating-count {
+    font-weight: 400;
+    color: #718096;
+    font-size: 0.8rem;
+}
+
+.menu-open-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.menu-open-status.open {
+    color: #38A169;
+}
+
+.menu-open-status.closed {
+    color: #E53E3E;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.menu-open-status.open .status-dot {
+    background-color: #38A169;
+}
+
+.menu-open-status.closed .status-dot {
+    background-color: #E53E3E;
+}
+
+.menu-header-img-wrap {
+    flex-shrink: 0;
+    width: 160px;
+    height: 160px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.menu-header-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Menu Section --- */
+
+.menu-section {
+    margin-top: 28px;
+}
+
+.menu-section-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #2D3748;
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #E2E8F0;
+    letter-spacing: -0.01em;
+}
+
+/* --- Category Accordion --- */
+
+.menu-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-category {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.menu-category-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #2D3748;
+    font-family: inherit;
+    text-align: left;
+    transition: background-color 0.15s ease;
+}
+
+.menu-category-header:hover {
+    background-color: #F7FAFC;
+}
+
+.menu-category-count {
+    font-weight: 400;
+    color: #A0AEC0;
+    font-size: 0.9rem;
+}
+
+.menu-chevron {
+    font-size: 1.3rem;
+    color: #A0AEC0;
+    transition: transform 0.25s ease;
+    transform: rotate(-90deg);
+    line-height: 1;
+}
+
+.menu-chevron.expanded {
+    transform: rotate(-270deg);
+}
+
+/* --- Items List --- */
+
+.menu-items-list {
+    padding: 0 20px 12px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid #EDF2F7;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.menu-item-badges {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+/* Veg / Non-veg indicator */
+
+.veg-badge {
+    width: 18px;
+    height: 18px;
+    border: 2px solid;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.veg-badge.veg {
+    border-color: #38A169;
+}
+
+.veg-badge.nonveg {
+    border-color: #E53E3E;
+}
+
+.veg-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: block;
+}
+
+.veg-badge.veg .veg-dot {
+    background-color: #38A169;
+}
+
+.veg-badge.nonveg .veg-dot {
+    background-color: #E53E3E;
+}
+
+.bestseller-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #C53030;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.menu-item-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2D3748;
+    margin: 0 0 4px;
+}
+
+.menu-item-price {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2D3748;
+    margin: 0 0 6px;
+}
+
+.menu-item-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #38A169;
+    margin-bottom: 8px;
+}
+
+.item-rating-count {
+    font-weight: 400;
+    color: #A0AEC0;
+}
+
+.menu-item-desc {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #A0AEC0;
+    margin: 0;
+}
+
+/* Item image thumbnail */
+
+.menu-item-img-wrap {
+    flex-shrink: 0;
+    width: 118px;
+    height: 96px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.menu-item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-empty {
+    text-align: center;
+    color: #A0AEC0;
+    font-size: 1rem;
+    padding: 40px 0;
+}
+
+/* --- Menu Shimmer Loading --- */
+
+.menu-header-shimmer {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 28px 32px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid #E2E8F0;
+    margin-bottom: 28px;
+}
+
+.shimmer-block {
+    background: linear-gradient(90deg, #E2E8F0 25%, #F7FAFC 50%, #E2E8F0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+}
+
+.shimmer-title {
+    height: 28px;
+    width: 55%;
+    margin-bottom: 12px;
+}
+
+.shimmer-subtitle {
+    height: 16px;
+    width: 40%;
+    margin-bottom: 8px;
+}
+
+.shimmer-meta {
+    height: 32px;
+    width: 70%;
+    margin-top: 16px;
+}
+
+.menu-items-shimmer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.shimmer-item-card {
+    background: linear-gradient(90deg, #E2E8F0 25%, #F7FAFC 50%, #E2E8F0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    height: 56px;
+    border-radius: 12px;
+}
+
+/* --- Menu Responsive --- */
+
+@media (max-width: 640px) {
+    .menu-header {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .menu-header-img-wrap {
+        width: 100%;
+        height: 180px;
+        border-radius: 10px;
+    }
+
+    .menu-res-meta {
+        justify-content: center;
+    }
+
+    .menu-open-status {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .menu-item-img-wrap {
+        width: 90px;
+        height: 78px;
+    }
+
+    .menu-category-header {
+        padding: 14px 16px;
+        font-size: 0.95rem;
+    }
+
+    .menu-items-list {
+        padding: 0 16px 10px;
+    }
 }
