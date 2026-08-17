@@ -5,21 +5,28 @@ import { Link } from "react-router-dom";
 const Header = ()=>{
 
     const [isLoggedIn, setIsLoggedIn] = useState("Login");
-
+    const [menuOpen, setMenuOpen] = useState(false);
 
     return(
         <nav className="nav">
             <div className="logo">
-                <Link to="/"><img src={LOGO_URL} alt="FoodieZone Logo" /> </Link>
+                <Link to="/" onClick={() => setMenuOpen(false)}><img src={LOGO_URL} alt="FoodieZone Logo" /> </Link>
             </div>
-            <div className="nav-items">
+            <button
+                className="nav-hamburger"
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label="Toggle menu"
+            >
+                {menuOpen ? "✕" : "☰"}
+            </button>
+            <div className={`nav-items ${menuOpen ? "nav-open" : ""}`}>
                 <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/offers">Offers</Link></li>
-                    <li><Link to="/about">About Us</Link></li>
-                    <li><Link to="/contact">Contact Us</Link></li>
+                    <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
+                    <li><Link to="/offers" onClick={() => setMenuOpen(false)}>Offers</Link></li>
+                    <li><Link to="/about" onClick={() => setMenuOpen(false)}>About Us</Link></li>
+                    <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</Link></li>
                     <li className="cart-item">
-                        <Link to="/cart">
+                        <Link to="/cart" onClick={() => setMenuOpen(false)}>
                             Cart
                         </Link>
                     </li>

@@ -21,9 +21,24 @@ const Body = () => {
     const CORS_PROXY = "http://localhost:3001/?url=";
 
     const parseSwiggyResponse = (json) => {
-        return json?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-            || json?.data?.cards?.[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-            || json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        const cards = json?.data?.cards || [];
+        const allRestaurants = [];
+        const seenIds = new Set();
+
+        for (const card of cards) {
+            const restaurants = card?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+            if (restaurants && Array.isArray(restaurants)) {
+                for (const res of restaurants) {
+                    const id = res?.info?.id;
+                    if (id && !seenIds.has(id)) {
+                        seenIds.add(id);
+                        allRestaurants.push(res);
+                    }
+                }
+            }
+        }
+
+        return allRestaurants.length > 0 ? allRestaurants : null;
     };
 
     const fetchData = async () => {

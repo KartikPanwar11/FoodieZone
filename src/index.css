@@ -81,16 +81,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     padding: 20px;
     margin: 20px 0;
     gap: 10px;
 }
 
 .search > input {
-    flex: 0 0 320px;
+    flex: 1 1 280px;
     max-width: 420px;
-    width: 320px;
+    min-width: 0;
     padding: 10px 15px;
     border: 1px solid #CBD5E0;
     border-radius: 8px;
@@ -139,10 +139,11 @@ body{
 
 .res-card{
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
 .card-link {
@@ -428,12 +429,323 @@ body{
   background-color: #E64A19;
 }
 
-/* Responsive Adjustments */
+/* ======================================
+   Responsive — Hamburger Menu
+   ====================================== */
+
+.nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #2D3748;
+    padding: 4px 8px;
+    line-height: 1;
+}
+
+/* ======================================
+   Responsive — Tablet (≤1024px)
+   ====================================== */
+
+@media (max-width: 1024px) {
+    .res-card {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 16px;
+    }
+
+    .about-content {
+        gap: 24px;
+    }
+
+    .contact-wrapper {
+        gap: 30px;
+        padding: 28px;
+    }
+
+    .footer-section {
+        min-width: 160px;
+    }
+}
+
+/* ======================================
+   Responsive — Mobile (≤768px)
+   ====================================== */
+
 @media (max-width: 768px) {
-  .about-content,
-  .contact-wrapper {
-    flex-direction: column;
-  }
+    body {
+        margin: 0 12px;
+    }
+
+    /* --- Nav hamburger --- */
+    .nav {
+        padding: 12px 16px;
+        position: relative;
+    }
+
+    .nav-hamburger {
+        display: block;
+    }
+
+    .logo img {
+        width: 150px;
+    }
+
+    .nav-items {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #FFFFFF;
+        border: 1px solid #E2E8F0;
+        border-top: none;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+        padding: 8px 0;
+    }
+
+    .nav-items.nav-open {
+        display: block;
+    }
+
+    .nav-items > ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .nav-items > ul > li {
+        border-radius: 0;
+        padding: 12px 20px;
+    }
+
+    .nav-items > ul > li:hover {
+        background-color: #FFF3EE;
+    }
+
+    .nav-items > ul > li > a {
+        display: block;
+        width: 100%;
+    }
+
+    .nav-items > ul > li > button {
+        width: 100%;
+    }
+
+    /* --- Search --- */
+    .search {
+        padding: 16px 4px;
+        gap: 8px;
+    }
+
+    .search > input {
+        flex: 1 1 100%;
+    }
+
+    .search-actions {
+        width: 100%;
+        justify-content: stretch;
+    }
+
+    .search-actions > button {
+        flex: 1;
+        min-width: 0;
+    }
+
+    /* --- Cards --- */
+    .res-card {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    .card h5, .card p {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+
+    /* --- About --- */
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-header h1 {
+        font-size: 30px;
+    }
+
+    /* --- Contact --- */
+    .contact-wrapper {
+        flex-direction: column;
+        padding: 24px;
+        gap: 30px;
+    }
+
+    .contact-info h2 {
+        font-size: 24px;
+    }
+
+    /* --- Page typography --- */
+    .page-title {
+        font-size: 24px;
+    }
+
+    .page-subtitle {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+
+    /* --- Error page --- */
+    .error-code {
+        font-size: 80px;
+    }
+
+    .error-message {
+        font-size: 22px;
+    }
+
+    .error-desc {
+        font-size: 15px;
+    }
+
+    /* --- Offers --- */
+    .offers-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 16px;
+    }
+
+    /* --- Footer --- */
+    .footer {
+        padding: 32px 16px 16px;
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footer-section {
+        min-width: unset;
+        margin-bottom: 16px;
+    }
+
+    .footer-section h4 {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    /* --- Shimmer --- */
+    .shimmer-container {
+        gap: 12px;
+    }
+
+    .shimmer-card {
+        width: calc(50% - 8px);
+        height: 220px;
+    }
+}
+
+/* ======================================
+   Responsive — Small Mobile (≤480px)
+   ====================================== */
+
+@media (max-width: 480px) {
+    body {
+        margin: 0 8px;
+    }
+
+    .nav {
+        padding: 10px 12px;
+    }
+
+    .logo img {
+        width: 130px;
+    }
+
+    /* Single column cards on small phones */
+    .res-card {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .res-img {
+        height: 180px;
+    }
+
+    .card h3 {
+        font-size: 1.05rem;
+        padding: 10px;
+    }
+
+    /* --- Search full width --- */
+    .search-actions {
+        flex-direction: column;
+    }
+
+    .search-actions > button {
+        width: 100%;
+    }
+
+    /* --- About --- */
+    .about-header h1 {
+        font-size: 24px;
+    }
+
+    .about-text h3 {
+        font-size: 18px;
+    }
+
+    /* --- Contact --- */
+    .contact-wrapper {
+        padding: 16px;
+    }
+
+    .contact-info h2 {
+        font-size: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    /* --- Offers --- */
+    .offers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Error --- */
+    .error-code {
+        font-size: 64px;
+    }
+
+    .error-message {
+        font-size: 18px;
+    }
+
+    .home-btn {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    /* --- Shimmer --- */
+    .shimmer-card {
+        width: 100%;
+        height: 200px;
+    }
 }
 
 .footer {
@@ -918,17 +1230,48 @@ body{
 
 /* --- Menu Responsive --- */
 
-@media (max-width: 640px) {
+/* --- Menu page tablet --- */
+@media (max-width: 768px) {
+    .menu-page {
+        padding: 0 12px;
+        margin: 20px auto;
+    }
+
+    .menu-header {
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .menu-res-name {
+        font-size: 1.4rem;
+    }
+
+    .menu-header-img-wrap {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* --- Menu page mobile --- */
+@media (max-width: 480px) {
+    .menu-page {
+        padding: 0 8px;
+    }
+
     .menu-header {
         flex-direction: column-reverse;
         text-align: center;
-        padding: 20px;
+        padding: 16px;
     }
 
     .menu-header-img-wrap {
         width: 100%;
         height: 180px;
         border-radius: 10px;
+    }
+
+    .menu-res-name {
+        font-size: 1.25rem;
     }
 
     .menu-res-meta {
@@ -940,9 +1283,22 @@ body{
         width: 100%;
     }
 
+    .menu-badge {
+        font-size: 0.78rem;
+        padding: 4px 10px;
+    }
+
     .menu-item-img-wrap {
-        width: 90px;
-        height: 78px;
+        width: 86px;
+        height: 72px;
+    }
+
+    .menu-item-name {
+        font-size: 0.9rem;
+    }
+
+    .menu-item-desc {
+        font-size: 0.78rem;
     }
 
     .menu-category-header {
@@ -951,6 +1307,10 @@ body{
     }
 
     .menu-items-list {
-        padding: 0 16px 10px;
+        padding: 0 12px 8px;
+    }
+
+    .menu-section-title {
+        font-size: 1.15rem;
     }
 }
