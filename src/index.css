@@ -139,7 +139,7 @@ body{
 
 .res-card{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
     width: 100%;
     margin: 0;
@@ -149,11 +149,15 @@ body{
 .card-link {
     text-decoration: none;
     color: inherit;
+    display: flex;
 }
 
 .card{
     background-color: #FFFFFF;
     width: 100%;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -179,7 +183,15 @@ body{
     padding: 10px;
 }
 
-.card h5,p {
+.card p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #718096;
+    padding: 10px;
+}
+
+.card h5 {
     margin: 5px 0;
     font-size: 0.9rem;
     font-weight: 400;
