@@ -14,7 +14,7 @@ const About = () => {
             FoodieZone started with a simple mission: to connect food lovers with the best local flavors. Whether you are craving a hearty North Indian thali, sizzling Indo-Chinese paneer noodles, or quick fast food, we bring it straight to your door.
           </p>
           <p>
-            Currently serving hungry customers across Bulandshahr, Noida, and Greater Noida, we partner with top-rated local restaurants and quick-service chains to ensure your food arrives hot, fresh, and on time. 
+            Currently serving hungry customers across Delhi NCR, we partner with top-rated local restaurants and quick-service chains to ensure your food arrives hot, fresh, and on time. 
           </p>
           <h3>Why Choose Us?</h3>
           <ul>
