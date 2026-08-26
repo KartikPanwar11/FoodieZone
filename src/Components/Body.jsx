@@ -4,6 +4,7 @@ import { mapRestaurantData } from "../utils/helper";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useStatus from "../utils/useStatus";
 
 
 
@@ -37,6 +38,8 @@ const Body = () => {
                 }
             }
         }
+
+
 
         return allRestaurants.length > 0 ? allRestaurants : null;
     };
@@ -86,13 +89,20 @@ const Body = () => {
         const sortedList = allRestaurants.filter((res) => res.avgRating >= 4.2);
         setListOfRestaurants(sortedList);
     };
-    
+
+    //online status
+    const onlineStatus = useStatus();
+
     // Use isLoading state — not list length — to control Shimmer
     if (isLoading) return <Shimmer />;
 
     return (
         <div className="body">
             <div className="search">
+                <div className={`network-status ${onlineStatus ? "is-online" : "is-offline"}`}>
+                    <span className="network-dot" aria-hidden="true"></span>
+                    <span>{onlineStatus ? "Live: You are online" : "Offline mode: Showing available data"}</span>
+                </div>
 
                 <input placeholder="Search For Restaurants" value={searchText} 
                 onChange={(e)=>{setSearchText(e.target.value)}}></input>
