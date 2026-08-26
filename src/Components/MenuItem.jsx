@@ -48,3 +48,8 @@ const MenuItem = ({ item, index }) => (
 );
 
 export default MenuItem;
+
+//Veg/non-veg badge
+//Bestseller tag
+//Name, price, rating, description
+// Food thumbnail image
