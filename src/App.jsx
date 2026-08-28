@@ -1,11 +1,9 @@
-// import React from "react";
 import ReactDOM from "react-dom/client"
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
 import Header from "./Components/Header";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Offers from "./Components/Offer";
-// import Card from "./Components/Card";
 import Body from "./Components/Body";  
 import RestaurantMenu from "./Components/RestaurantMenu";
 import Footer from "./Components/Footer";
