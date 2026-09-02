@@ -5,7 +5,8 @@ const restaurantList = [
     cuisines: "Chinese, Biryani, Snacks",
     cloudinaryImageId: "pufxybu8v7buunia3qky",
     deliveryTime: 22,
-    avgRating: 4
+    avgRating: 4,
+    promoted: true
   },
   {
     id: "683064",

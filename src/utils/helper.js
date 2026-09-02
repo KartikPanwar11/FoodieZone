@@ -9,6 +9,7 @@ export const mapRestaurantData = (restaurants) => {
             cloudinaryImageId,
             deliveryTime: sla?.deliveryTime,
             avgRating,
+            promoted: Boolean(restaurant?.promoted ?? restaurant?.info?.promoted ?? false),
         };
     });
 };

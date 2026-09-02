@@ -2,3 +2,5 @@ export const LOGO_URL = "https://res.cloudinary.com/de8ejendd/image/upload/v1785
 
 // constants.js
 export const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+
+// console.log("CDN_URL:", CDN_URL);

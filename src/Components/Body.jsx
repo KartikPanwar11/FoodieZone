@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card,{withPromotedLabel} from "./Card";
 import restaurantList from "../Data/res-list";
 import { mapRestaurantData } from "../utils/helper";
 import { useState, useEffect } from "react";
@@ -8,11 +8,15 @@ import useStatus from "../utils/useStatus";
 
 
 
+
 const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
     const [allRestaurants, setAllRestaurants] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    let [searchText, setSearchText] = useState("");
+    const [searchText, setSearchText] = useState("");
+
+    const RestaurantCardPromoted = withPromotedLabel(Card);
+
 
     useEffect(() => {
         fetchData();
@@ -130,7 +134,11 @@ const Body = () => {
             <div className="res-card">
                 {listOfRestaurants.map((res) => (
                     <Link key={res.id} to={"/restaurant/" + res.id} className="card-link">
-                        <Card resData={res} />
+                        {res.promoted ? (
+                            <RestaurantCardPromoted resData={res}/>
+                        ) : (
+                            <Card resData={res} />
+                        )}
                     </Link>
                 ))}
             </div>

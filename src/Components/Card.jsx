@@ -16,6 +16,17 @@ const Card = (props) => {
             <h5>{deliveryTime} mins</h5>
         </div>
     )
-}
+};
+
+export const withPromotedLabel = (Card) => {
+    return (props) => {
+        return(
+            <div className="promoted-card">
+                <span className="promoted-label">Promoted</span>
+                <Card {...props}/>
+            </div>
+        )
+    }}
+
 
 export default Card;
