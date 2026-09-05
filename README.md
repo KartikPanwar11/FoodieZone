@@ -8,6 +8,17 @@ A modern, responsive food delivery web application interface built from scratch 
 
 FoodieZone is a front-end React application that displays a list of local restaurants. The primary goal of this project was to build a clean, scalable UI without relying on heavy external UI libraries. It relies entirely on custom, modern CSS, standard React features, and live API integration to fetch real-world data.
 
+## Performance Metrics
+
+FoodieZone is highly optimized for speed, accessibility, and search engine visibility. By utilizing modern React component architecture and lightweight custom CSS, the application achieves top-tier Google Lighthouse scores.
+
+<img width="444" height="153" alt="Lighthouse Scores" src="https://github.com/user-attachments/assets/92c038fb-7e42-4fd9-aa0b-fd27fafca942" />
+
+* **Performance:** 99
+* **Best Practices:** 100
+* **Accessibility:** 93
+* **SEO:** 92
+
 ## Development Journey
 
 * **Phase 1 (The Foundation):** Built the core UI using standard React components and props, initially populated with static, hardcoded JSON data to establish the layout.
