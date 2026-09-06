@@ -14,8 +14,8 @@ FoodieZone is highly optimized for speed, accessibility, and search engine visib
 
 <img width="444" height="153" alt="Lighthouse Scores" src="https://github.com/user-attachments/assets/92c038fb-7e42-4fd9-aa0b-fd27fafca942" />
 
-* **Performance:** 99
 * **Best Practices:** 100
+* **Performance:** 99
 * **Accessibility:** 93
 * **SEO:** 92
 
@@ -45,7 +45,3 @@ FoodieZone is highly optimized for speed, accessibility, and search engine visib
 * **Icons/Assets:** Custom SVG graphics and optimized web images
 
 <img width="1470" height="836" alt="Screenshot 2026-08-12 at 5 20 18 PM" src="https://github.com/user-attachments/assets/e5032791-eee0-4613-bdd2-28632f15ed97" />
-
-## Project Structure
-
-will update at the end of this project 
