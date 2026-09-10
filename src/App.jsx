@@ -1,4 +1,5 @@
-import ReactDOM from "react-dom/client"
+import ReactDOM from "react-dom/client";
+import {useState,useEffect} from "react";
 import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
 import Header from "./Components/Header";
 import About from "./Components/About";
@@ -8,15 +9,29 @@ import Body from "./Components/Body";
 import RestaurantMenu from "./Components/RestaurantMenu";
 import Footer from "./Components/Footer";
 import ErrorPage from "./Components/Error";
+import UserContext from "./utils/UserContext";
 
 
 const AppLayout = () =>{
+
+    const [userName,setUserName] = useState();
+
+    useEffect(()=>{
+        const data = {
+            name:"Kartik",
+        };
+        setUserName(data.name)
+    },[])
+
+
     return (
-        <div className="main">
-            <Header/>
-            <Outlet/>
-            <Footer/>
-        </div>
+        <UserContext.Provider value={{loggedInUser:userName}}>
+            <div className="main">
+                <Header/>
+                <Outlet/>
+                <Footer/>
+            </div>
+        </UserContext.Provider>
     )
 }
 const appRouter = createBrowserRouter([

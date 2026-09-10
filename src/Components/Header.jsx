@@ -1,11 +1,13 @@
 import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 const Header = ()=>{
 
-    const [isLoggedIn, setIsLoggedIn] = useState("Login");
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const {loggedInUser} = useContext(UserContext);
 
     return(
         <nav className="nav">
@@ -32,10 +34,10 @@ const Header = ()=>{
                     </li>
                     <li><button
                         onClick={()=>{
-                            isLoggedIn === "Login" ? setIsLoggedIn("Logout") : setIsLoggedIn("Login");
+                            setIsLoggedIn(!isLoggedIn);
                         }}
                         >
-                        {isLoggedIn}
+                        {isLoggedIn ? `Hi, ${loggedInUser}` : "Login"}
                         </button></li>
                 </ul>
             </div>
