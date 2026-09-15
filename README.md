@@ -19,14 +19,6 @@ FoodieZone is highly optimized for speed, accessibility, and search engine visib
 * **Accessibility:** 93
 * **SEO:** 92
 
-## Development Journey
-
-* **Phase 1 (The Foundation):** Built the core UI using standard React components and props, initially populated with static, hardcoded JSON data to establish the layout.
-* **Phase 2 (State Management):** Introduced the `useState` hook to add interactivity, creating a feature that allows users to filter and view only the top-rated restaurants dynamically.
-* **Phase 3 (Live API Integration):** Upgraded the app from static data to real-world data by implementing the `useEffect` hook to fetch and render live restaurant data directly from the Swiggy API. Also added shimmer effect for initial loading.
-* **Phase 3.1 (Bugs Fix):** Added search box functionality by using `useState and filter` method to filter out search restaurants. Fixed unable to render the restaurant list from Swiggy API using the CORS Proxy.
-* **Phase 4 (Multi-Page Architecture):** Implemented client-side routing using `react-router-dom` to transition from a single view to a comprehensive multi-page application. Added dedicated, fully styled routes for the Home, About Us, Contact, and Offers pages, alongside a custom 404 Error catch-all route to improve user experience and navigation flow.
-
 ## Key Features
 
 * **Live API Data Fetching:** Utilizes modern React Hooks to request, parse, and render real-time data from external endpoints.
@@ -44,4 +36,5 @@ FoodieZone is highly optimized for speed, accessibility, and search engine visib
 * **Styling:** Custom CSS3 (Flexbox, standard styling)
 * **Icons/Assets:** Custom SVG graphics and optimized web images
 
-<img width="1470" height="836" alt="Screenshot 2026-08-12 at 5 20 18 PM" src="https://github.com/user-attachments/assets/e5032791-eee0-4613-bdd2-28632f15ed97" />
+<img width="1470" height="814" alt="image" src="https://github.com/user-attachments/assets/a4bb5361-1b07-43a4-8188-dcb7d473688f" />
+
