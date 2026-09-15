@@ -6,8 +6,8 @@ const formatPrice = (price) => {
 };
 
 const MenuItem = ({ item, index }) => (
-  <div key={`${item.id}-${index}`} className="menu-item">
-    <div className="menu-item-details">
+    <div key={`${item.id}-${index}`} className="menu-item">
+      <div className="menu-item-details">
       <div className="menu-item-badges">
         {item.itemAttribute?.vegClassifier && (
           <span className={`veg-badge ${item.itemAttribute.vegClassifier === "VEG" ? "veg" : "nonveg"}`}>
@@ -38,13 +38,22 @@ const MenuItem = ({ item, index }) => (
             : item.description}
         </p>
       )}
-    </div>
-    {item.imageId && (
-      <div className="menu-item-img-wrap">
-        <img className="menu-item-img" src={CDN_URL + item.imageId} alt={item.name} />
       </div>
-    )}
-  </div>
+      <div className="menu-item-actions">
+        {item.imageId && (
+          <div className="menu-item-img-wrap">
+            <img className="menu-item-img" src={CDN_URL + item.imageId} alt={item.name} />
+          </div>
+        )}
+        <button
+          type="button"
+          className="menu-add-btn"
+          aria-label={`Add ${item.name}`}
+        >
+          Add
+        </button>
+      </div>
+    </div>
 );
 
 export default MenuItem;
