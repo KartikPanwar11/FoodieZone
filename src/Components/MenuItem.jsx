@@ -6,7 +6,7 @@ const formatPrice = (price) => {
 };
 
 const MenuItem = ({ item, index }) => (
-    <div key={`${item.id}-${index}`} className="menu-item">
+      <div key={`${item.id}-${index}`} className="menu-item">
       <div className="menu-item-details">
       <div className="menu-item-badges">
         {item.itemAttribute?.vegClassifier && (
