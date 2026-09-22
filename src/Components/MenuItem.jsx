@@ -10,9 +10,10 @@ const formatPrice = (price) => {
 const MenuItem = ({ item, index }) => {
   const dispatch = useDispatch();
 
-  const handleAddItem = () => {
+  const handleAddItem = (item) => {
     dispatch(addItem(item));
   };
+
 
   return (
       <div key={`${item.id}-${index}`} className="menu-item">
@@ -58,7 +59,7 @@ const MenuItem = ({ item, index }) => {
           type="button"
           className="menu-add-btn"
           aria-label={`Add ${item.name}`}
-          onClick={handleAddItem}
+          onClick={()=>handleAddItem(item)}
         >
           Add +
         </button>
