@@ -10,6 +10,8 @@ import RestaurantMenu from "./Components/RestaurantMenu";
 import Footer from "./Components/Footer";
 import ErrorPage from "./Components/Error";
 import UserContext from "./utils/UserContext";
+import {Provider} from "react-redux"
+import foodStore from "./redux/foodStore";
 
 
 const AppLayout = () =>{
@@ -25,13 +27,15 @@ const AppLayout = () =>{
 
 
     return (
-        <UserContext.Provider value={{loggedInUser:userName}}>
-            <div className="main">
-                <Header/>
-                <Outlet/>
-                <Footer/>
-            </div>
-        </UserContext.Provider>
+        <Provider store={foodStore}>
+            <UserContext.Provider value={{loggedInUser:userName}}>
+                <div className="main">
+                    <Header/>
+                    <Outlet/>
+                    <Footer/>
+                </div>
+            </UserContext.Provider>
+        </Provider>
     )
 }
 const appRouter = createBrowserRouter([

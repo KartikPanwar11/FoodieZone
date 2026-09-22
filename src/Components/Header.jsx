@@ -25,8 +25,8 @@ const Header = ()=>{
                 <ul>
                     <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
                     <li><Link to="/offers" onClick={() => setMenuOpen(false)}>Offers</Link></li>
-                    <li><Link to="/about" onClick={() => setMenuOpen(false)}>About Us</Link></li>
-                    <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</Link></li>
+                    <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
+                    <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
                     <li className="cart-item">
                         <Link to="/cart" onClick={() => setMenuOpen(false)}>
                             Cart
