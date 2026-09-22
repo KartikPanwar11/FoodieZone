@@ -60,7 +60,7 @@ const MenuItem = ({ item, index }) => {
           aria-label={`Add ${item.name}`}
           onClick={handleAddItem}
         >
-          Add
+          Add +
         </button>
       </div>
     </div>
