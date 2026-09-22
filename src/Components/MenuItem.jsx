@@ -1,11 +1,20 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
+import { addItem } from "../redux/cartSlice";
 
 const formatPrice = (price) => {
   if (!price) return "";
   return "₹" + (price / 100).toFixed(0);
 };
 
-const MenuItem = ({ item, index }) => (
+const MenuItem = ({ item, index }) => {
+  const dispatch = useDispatch();
+
+  const handleAddItem = () => {
+    dispatch(addItem(item));
+  };
+
+  return (
       <div key={`${item.id}-${index}`} className="menu-item">
       <div className="menu-item-details">
       <div className="menu-item-badges">
@@ -49,12 +58,14 @@ const MenuItem = ({ item, index }) => (
           type="button"
           className="menu-add-btn"
           aria-label={`Add ${item.name}`}
+          onClick={handleAddItem}
         >
           Add
         </button>
       </div>
     </div>
-);
+  );
+};
 
 export default MenuItem;
 

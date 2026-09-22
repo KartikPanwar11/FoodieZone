@@ -2,12 +2,19 @@ import { LOGO_URL } from "../utils/constants";
 import { useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = ()=>{
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const {loggedInUser} = useContext(UserContext);
+
+    //selector to update the cart number and subscribing to the store using this hook
+    const cartItems = useSelector(
+        (store)=>store.cart.items
+    )
+
 
     return(
         <nav className="nav">
@@ -29,7 +36,7 @@ const Header = ()=>{
                     <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
                     <li className="cart-item">
                         <Link to="/cart" onClick={() => setMenuOpen(false)} aria-label="Cart, 0 items">
-                            🛒 (0)
+                            🛒 ({cartItems.length})
                         </Link>
                     </li>
                     <li><button
