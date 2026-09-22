@@ -11,6 +11,7 @@ const formatPrice = (price) => {
 const Cart = ()=>{
     const cartItems = useSelector((store) => store.cart.items);
     const dispatch = useDispatch();
+    
     const groupedItems = cartItems.reduce((items, item) => {
         const existingItem = items.find((entry) => entry.item.id === item.id);
 

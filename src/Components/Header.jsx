@@ -15,8 +15,6 @@ const Header = ()=>{
         (store)=>store.cart.items
     )
 
-
-    
     return(
         <nav className="nav">
             <div className="logo">
@@ -36,8 +34,9 @@ const Header = ()=>{
                     <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
                     <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
                     <li className="cart-item">
-                        <Link to="/cart" onClick={() => setMenuOpen(false)} aria-label="Cart, 0 items">
-                            🛒 ({cartItems.length})
+                        <Link to="/cart" onClick={() => setMenuOpen(false)} aria-label={`Cart, ${cartItems.length} items`}>
+                            <span className="cart-icon" aria-hidden="true">🛒</span>
+                            <span className="cart-badge">{cartItems.length}</span>
                         </Link>
                     </li>
                     <li><button

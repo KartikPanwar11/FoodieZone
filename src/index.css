@@ -21,6 +21,9 @@ body{
     border-radius: 10px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     margin-top: 20px;
+    position: sticky;
+    top: 12px;
+    z-index: 1000;
 }
 
 .logo img {
@@ -63,6 +66,41 @@ body{
     color: #FF5722;
 }
 
+.cart-item > a {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 7px;
+}
+
+.cart-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+.cart-badge {
+    display: inline-flex;
+    min-width: 22px;
+    height: 22px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    color: #1A202C;
+    background: #FFB199;
+    border: 2px solid #FF5722;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.cart-item > a:hover .cart-badge {
+    color: #FFFFFF;
+    background: #FF5722;
+}
+
 .nav-items > ul > li > button {
     padding: 10px 20px;
     background-color: #FF5722;
@@ -77,6 +115,33 @@ body{
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+
+.scroll-top-btn {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    z-index: 900;
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    color: #1A202C;
+    background: #FFB199;
+    border: 2px solid #FF5722;
+    border-radius: 50%;
+    box-shadow: 0 8px 18px rgba(45, 55, 72, 0.2);
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.scroll-top-btn:hover {
+    color: #FFFFFF;
+    background: #FF5722;
+    transform: translateY(-2px);
 }
 
 .search{
@@ -807,7 +872,8 @@ body{
     /* --- Nav hamburger --- */
     .nav {
         padding: 12px 16px;
-        position: relative;
+        position: sticky;
+        top: 8px;
     }
 
     .nav-hamburger {
@@ -859,6 +925,11 @@ body{
 
     .nav-items > ul > li > button {
         width: 100%;
+    }
+
+    .scroll-top-btn {
+        right: 18px;
+        bottom: 18px;
     }
 
     /* --- Search --- */

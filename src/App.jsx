@@ -26,6 +26,10 @@ const AppLayout = () =>{
         setUserName(data.name)
     },[])
 
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
 
     return (
         <Provider store={foodStore}>
@@ -34,6 +38,14 @@ const AppLayout = () =>{
                     <Header/>
                     <Outlet/>
                     <Footer/>
+                    <button
+                        className="scroll-top-btn"
+                        type="button"
+                        aria-label="Scroll to top"
+                        onClick={scrollToTop}
+                    >
+                        ↑
+                    </button>
                 </div>
             </UserContext.Provider>
         </Provider>
