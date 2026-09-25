@@ -2,17 +2,19 @@
 
 ## Live link --> <a href="https://foodiezone-zeta.vercel.app/"> FoodieZone <a/>
 
-A modern, responsive food delivery web application interface built from scratch to showcase React fundamentals, component-driven architecture, and modern CSS layouts. 
+A modern, responsive food delivery web application interface built from scratch to showcase React fundamentals, component-driven architecture, global state management, and modern CSS layouts. 
 
 ## Overview
 
-FoodieZone is a front-end React application that displays a list of local restaurants. The primary goal of this project was to build a clean, scalable UI without relying on heavy external UI libraries. It relies entirely on custom, modern CSS, standard React features, and live API integration to fetch real-world data.
+FoodieZone is a front-end React application that displays a list of local restaurants and allows users to build a custom food order. The primary goal of this project was to build a clean, scalable UI without relying on heavy external UI libraries. It relies entirely on custom, modern CSS, standard React features, live API integration to fetch real-world data, and a globally managed shopping cart powered by Redux.
 
 ## Performance Metrics
 
 FoodieZone is highly optimized for speed, accessibility, and search engine visibility. By utilizing modern React component architecture and lightweight custom CSS, the application achieves top-tier Google Lighthouse scores.
 
+<p align="center">
 <img width="444" height="153" alt="Lighthouse Scores" src="https://github.com/user-attachments/assets/92c038fb-7e42-4fd9-aa0b-fd27fafca942" />
+</p>
 
 * **Best Practices:** 100
 * **Performance:** 99
@@ -21,6 +23,7 @@ FoodieZone is highly optimized for speed, accessibility, and search engine visib
 
 ## Key Features
 
+* **Global State Management:** Integrated Redux Toolkit to engineer a dynamic, application wide shopping cart, allowing users to seamlessly add, remove, and manage items across different pages without prop-drilling.
 * **Live API Data Fetching:** Utilizes modern React Hooks to request, parse, and render real-time data from external endpoints.
 * **Component-Based Architecture:** The layout is broken down into modular, reusable functional components (`<Header />`, `<Body />`, `<Footer />`, `<RestaurantCard />`).
 * **Dynamic Data Rendering:** Restaurant data is mapped from an external JavaScript array and passed down dynamically into the UI using **React Props**.
@@ -30,6 +33,7 @@ FoodieZone is highly optimized for speed, accessibility, and search engine visib
 ## Tech Stack
 
 * **Framework:** React.js
+* **State Management:** Redux Toolkit (RTK) & React-Redux
 * **Routing:** React Router DOM
 * **Data:** Swiggy Live API Integration
 * **Language:** JavaScript (ES6+)
@@ -37,4 +41,3 @@ FoodieZone is highly optimized for speed, accessibility, and search engine visib
 * **Icons/Assets:** Custom SVG graphics and optimized web images
 
 <img width="1470" height="814" alt="image" src="https://github.com/user-attachments/assets/a4bb5361-1b07-43a4-8188-dcb7d473688f" />
-
