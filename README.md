@@ -40,4 +40,5 @@ FoodieZone is highly optimized for speed, accessibility, and search engine visib
 * **Styling:** Custom CSS3 (Flexbox, standard styling)
 * **Icons/Assets:** Custom SVG graphics and optimized web images
 
-<img width="1470" height="814" alt="image" src="https://github.com/user-attachments/assets/a4bb5361-1b07-43a4-8188-dcb7d473688f" />
+<img width="2940" height="1672" alt="image" src="https://github.com/user-attachments/assets/367d1a25-8bec-42f3-8756-a7a3da06f2bd" />
+
