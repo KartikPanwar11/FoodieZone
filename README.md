@@ -33,7 +33,7 @@ FoodieZone is highly optimized for speed, accessibility, and search engine visib
 ## Tech Stack
 
 * **Framework:** React.js
-* **State Management:** Redux Toolkit (RTK) & React-Redux
+* **State Management:** Redux Toolkit & React-Redux
 * **Routing:** React Router DOM
 * **Data:** Swiggy Live API Integration
 * **Language:** JavaScript (ES6+)
