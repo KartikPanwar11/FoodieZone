@@ -6,7 +6,8 @@
     "start": "node cors-proxy.mjs & parcel index.html",
     "proxy": "node cors-proxy.mjs",
     "dev": "node cors-proxy.mjs & parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
