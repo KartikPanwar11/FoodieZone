@@ -7,7 +7,8 @@
     "proxy": "node cors-proxy.mjs",
     "dev": "node cors-proxy.mjs & parcel index.html",
     "build": "parcel build index.html",
-    "test": "jest"
+    "test": "jest",
+    "watch-test": "jest --watch"
   },
   "author": "",
   "license": "ISC",
